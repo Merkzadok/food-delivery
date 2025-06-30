@@ -1,5 +1,5 @@
-import express, { Request, Response } from "express";
-import { connectDb, db } from "./database/database";
+import express from "express";
+import { connectDb } from "./database/database";
 import foodCategoryRouter from "./router/foodCategory.router";
 import chalk from "chalk";
 import foodRouter from "./router/food.router";

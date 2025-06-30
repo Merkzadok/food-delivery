@@ -4,7 +4,7 @@ import foodOrder from "../../model/foodOrder";
 export const getOrderById = async (req: Request, res: Response) => {
   const { orderId } = req.params;
   try {
-    const order = await foodOrder.findById(orderId);
+    const order = await foodOrder.findById(orderId).populate("foodOrderItems");
 
     res.status(200).send({ success: true, order });
   } catch (error) {
