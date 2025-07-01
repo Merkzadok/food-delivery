@@ -1,9 +1,9 @@
 import express from "express";
-import { createFoodCategory } from "../controller/foodCategory/post-category";
-import { getFoodCategory } from "../controller/foodCategory/get-category";
-import { getDeletedCategory } from "../controller/foodCategory/delete-category";
-import { updateCategory } from "../controller/foodCategory/update-category";
-import { getFoodCategoryById } from "../controller/foodCategory/get-category-by-id";
+import { createFoodCategory } from "../controller/foodCategory/post-category.controller";
+import { getFoodCategory } from "../controller/foodCategory/get-category.controller";
+import { getDeletedCategory } from "../controller/foodCategory/delete-category.controller";
+import { updateCategory } from "../controller/foodCategory/update-category.controller";
+import { getFoodCategoryById } from "../controller/foodCategory/get-category-by-id.controller";
 
 const foodCategoryRouter = express.Router();
 

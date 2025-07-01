@@ -1,9 +1,9 @@
 import express from "express";
-import { createUser } from "../controller/user/post-user";
-import { getUser } from "../controller/user/get-user";
-import { getUserById } from "../controller/user/get-user-by-id";
-import { deleteUserById } from "../controller/user/delete-user";
-import { updateUser } from "../controller/user/update-user";
+import { createUser } from "../controller/user/post-user.controller";
+import { getUser } from "../controller/user/get-user.controller";
+import { getUserById } from "../controller/user/get-user-by-id.controller";
+import { deleteUserById } from "../controller/user/delete-user.controller";
+import { updateUser } from "../controller/user/update-user.controller";
 
 const userRouter = express.Router();
 

@@ -1,9 +1,9 @@
 import express from "express";
-import { createFood } from "../controller/food/post-food";
-import { getFood } from "../controller/food/get-food";
-import { getFoodById } from "../controller/food/get-food-by-id";
-import { updateFood } from "../controller/food/update-food";
-import { getDeletedFood } from "../controller/food/delete-food";
+import { createFood } from "../controller/food/post-food.controller";
+import { getFood } from "../controller/food/get-food.controller";
+import { getFoodById } from "../controller/food/get-food-by-id.controller";
+import { updateFood } from "../controller/food/update-food.controller";
+import { getDeletedFood } from "../controller/food/delete-food.controller";
 
 const foodRouter = express.Router();
 
