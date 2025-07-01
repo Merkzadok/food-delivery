@@ -8,6 +8,7 @@ export const getUserById = async (req: Request, res: Response) => {
       path: "orderedFoods",
       populate: { path: "category" },
     });
+
     res.status(200).send({ success: true, user });
   } catch (error) {
     res.status(400).send({ message: "api error", error });

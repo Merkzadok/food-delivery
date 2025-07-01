@@ -11,7 +11,9 @@ const userSchema = new Schema(
     phoneNumber: { type: String, required: true },
     address: { type: String, required: true },
     role: { type: String, enum: Object.values(userRoleEnum), required: true },
-    orderedFoods: { type: Schema.Types.ObjectId, ref: "Food", required: true },
+    orderedFoods: [
+      { type: Schema.Types.ObjectId, ref: "Food", required: true },
+    ],
     ttl: { type: Date },
     isVerified: { type: Boolean, default: false },
   },

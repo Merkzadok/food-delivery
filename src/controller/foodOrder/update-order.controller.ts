@@ -3,7 +3,9 @@ import foodOrder from "../../model/foodOrder";
 
 export const updateOrder = async (req: Request, res: Response) => {
   const { orderId } = req.params;
+
   const { totalPrice } = req.body;
+
   try {
     const updatedOrder = await foodOrder.findByIdAndUpdate(orderId, {
       totalPrice,
