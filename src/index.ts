@@ -14,7 +14,7 @@ app.use("/food-category", foodCategoryRouter);
 
 app.use("/food", foodRouter);
 
-app.use("/auth", userRouter);
+app.use("/user", userRouter);
 
 app.use("/food-order", foodOrderRouter);
 

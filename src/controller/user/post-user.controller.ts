@@ -17,8 +17,6 @@ export const createUser = async (req: Request, res: Response) => {
 
     res.status(200).send({ success: true, user });
   } catch (error) {
-    console.log(error);
-
     res.status(400).send({ message: "API error", error });
   }
 };
