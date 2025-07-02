@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+
 import FoodCategory from "../../model/foodCategory";
 
 export const createFoodCategory = async (req: Request, res: Response) => {

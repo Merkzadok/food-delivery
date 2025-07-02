@@ -7,6 +7,7 @@ export const getFood = async (req: Request, res: Response) => {
 
     res.status(200).send({ success: true, foods });
   } catch (error) {
+    console.log(error);
     res.status(400).send({ message: "API error", error });
   }
 };

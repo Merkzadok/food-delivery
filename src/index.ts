@@ -5,10 +5,13 @@ import chalk from "chalk";
 import foodRouter from "./router/food.router";
 import userRouter from "./router/user.router";
 import foodOrderRouter from "./router/foodOrder.router";
+import cors from "cors";
 
-const port = 3000;
+const port = 4200;
 const app = express();
 app.use(express.json());
+
+app.use(cors());
 
 app.use("/food-category", foodCategoryRouter);
 
