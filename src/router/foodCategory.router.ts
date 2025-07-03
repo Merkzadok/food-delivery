@@ -1,10 +1,10 @@
 import express from "express";
+
 import { createFoodCategory } from "../controller/foodCategory/post-category.controller";
 import { getFoodCategory } from "../controller/foodCategory/get-category.controller";
 import { getDeletedCategory } from "../controller/foodCategory/delete-category.controller";
 import { updateCategory } from "../controller/foodCategory/update-category.controller";
 import { getFoodCategoryById } from "../controller/foodCategory/get-category-by-id.controller";
-import { getFoodWithCategory } from "../controller/food/get-food-with-category.controller";
 
 const foodCategoryRouter = express.Router();
 
@@ -17,7 +17,5 @@ foodCategoryRouter.get("/:id", getFoodCategoryById);
 foodCategoryRouter.delete("/:foodCategoryId", getDeletedCategory);
 
 foodCategoryRouter.put("/:foodCategoryId", updateCategory);
-
-foodCategoryRouter.get("/getFoodWithCategory", getFoodWithCategory);
 
 export default foodCategoryRouter;
