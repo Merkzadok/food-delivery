@@ -1,22 +1,20 @@
 import { Request, Response } from "express";
-import User from "../../model/user";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import User from "../../model/user";
 
-export const createUser = async (req: Request, res: Response) => {
-  const { email, password, phoneNumber, address, role } = req.body;
-
-  const hashedPassword = await bcrypt.hash(password, 10);
+export const login = async (req: Request, res: Response) => {
+  const { email, password } = req.body;
 
   try {
-    const user = await new User({
-      email: email,
-      password: hashedPassword,
-      phoneNumber: phoneNumber,
-      address: address,
-      // orderedFoods: orderedFoods,
-      // ttl: ttl,
-    }).save();
+    const user = await User.findOne({
+      email,
+    });
+
+    if (!user) {
+      res.status(400).json({ message: "try again 1 " });
+      return;
+    }
 
     const isMatch = await bcrypt.compare(password, user.password);
 
@@ -33,9 +31,8 @@ export const createUser = async (req: Request, res: Response) => {
     } else {
       res.status(400).json({ message: "try again 2 " });
     }
-
-    res.status(200).send({ success: true, user });
   } catch (error) {
-    res.status(400).send({ message: "API error", error });
+    console.log("error: ", error);
+    res.status(500).json({ success: false, error });
   }
 };
