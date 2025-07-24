@@ -12,7 +12,7 @@ const userSchema = new Schema(
     address: { type: String, required: true },
     role: {
       type: String,
-      enum: Object.values(userRoleEnum),
+      // enum: Object.values(userRoleEnum),
       required: true,
       default: userRoleEnum.USER,
     },
