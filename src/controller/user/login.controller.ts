@@ -25,6 +25,8 @@ export const login = async (req: Request, res: Response) => {
 
       const hour = Math.floor(Date.now() / 1000) + 60 * 60;
 
+      // const minute = Math.floor(Date.now() / 1000 / 60) + 60;
+
       const accessToken = jwt.sign({ exp: hour, data }, secret);
 
       res.status(200).json({ success: true, accessToken });
